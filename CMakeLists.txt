@@ -18,5 +18,7 @@ add_executable(test-app src/main.cpp)
 target_link_libraries(test-app PRIVATE
 	juce::juce_core
 	juce::juce_gui_basics
-	curl
+)
+target_compile_definitions(test-app PUBLIC 
+	JUCE_USE_CURL=0
 )
