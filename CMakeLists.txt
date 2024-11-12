@@ -17,6 +17,14 @@ CPMAddPackage(
 	SOURCE_DIR ${LIB_DIR}/juce
 )
 
+# set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+if (MSVC)
+	add_compile_options(/Wall /WX)
+else()
+	add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 add_executable(test-app src/main.cpp)
 target_link_libraries(test-app PRIVATE
 	juce::juce_core
@@ -25,3 +33,5 @@ target_link_libraries(test-app PRIVATE
 target_compile_definitions(test-app PUBLIC 
 	JUCE_USE_CURL=0
 )
+
+add_subdirectory(plugin)
