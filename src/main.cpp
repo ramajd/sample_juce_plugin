@@ -7,7 +7,7 @@ public:
 	HelloJuceComponent()
 	{
 		helloLabel.setText("Hello, JUCE!", juce::dontSendNotification);
-		helloLabel.setFont(juce::Font(24.0f));
+		helloLabel.setFont(juce::FontOptions(24.0f));
 		helloLabel.setJustificationType(juce::Justification::centred);
 
 		addAndMakeVisible(helloLabel);
