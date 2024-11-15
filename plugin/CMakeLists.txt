@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.22)
-
 project(SampleAudioPlugin VERSION 0.1.0)
 
 juce_add_plugin(${PROJECT_NAME}
@@ -7,9 +5,9 @@ juce_add_plugin(${PROJECT_NAME}
     IS_SYNTH FALSE
     NEEDS_MIDI_INPUT FALSE
     NEEDS_MIDI_OUTPUT FALSE 
-    PLUGIN_MANUFACTURER_CODE EPEN 
+    PLUGIN_MANUFACTURER_CODE EPEN
     PLUGIN AUPL
-    FORMATS VST3 
+    FORMATS AU VST3 Standalone
     PRODUCT_NAME "SampleAudioPlugin"
 )
 
@@ -19,10 +17,7 @@ target_sources(${PROJECT_NAME}
         src/PluginProcessor.cpp
 )
 
-target_include_directories(${PROJECT_NAME}
-    PRIVATE
-        include
-)
+target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE 
