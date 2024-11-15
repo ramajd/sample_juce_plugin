@@ -1,3 +1,6 @@
 [submodule "libs/juce"]
 	path = libs/juce
 	url = https://github.com/juce-framework/JUCE.git
+[submodule "libs/ara"]
+	path = libs/ara
+	url = https://github.com/Celemony/ARA_SDK.git
